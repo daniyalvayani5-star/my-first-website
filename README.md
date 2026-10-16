@@ -290,3 +290,849 @@
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+ {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    background: #141414;
+    color: #ffffff;
+    font-family: 'Inter', Arial, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+}
+
+p {
+    color: #999999;
+    font-size: 13px;
+}
+
+section {
+    scroll-margin-top: 90px;
+}
+
+
+.header {
+    width: min(1200px, 90%);
+    margin: 0 auto;
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    position: relative;
+    z-index: 5;
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: #e50000;
+    font-size: 23px;
+    margin-right: 5px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: #0c0c0c;
+    border: 1px solid #262626;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.navbar a {
+    color: #b5b5b5;
+    font-size: 12px;
+    padding: 10px 15px;
+    border-radius: 7px;
+    transition: 0.25s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #ffffff;
+    background: #252525;
+}
+
+.header-icons {
+    display: flex;
+    gap: 18px;
+    font-size: 24px;
+}
+
+.header-icons a:hover {
+    color: #e50000;
+}
+
+
+
+.hero {
+    min-height: 900px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 0 5% 55px;
+    isolation: isolate;
+}
+
+.poster-wall {
+    position: absolute;
+    z-index: -2;
+    top: -76px;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    grid-auto-rows: 135px;
+    gap: 8px;
+    overflow: hidden;
+    opacity: 0.65;
+    -webkit-mask-image: linear-gradient(
+        to bottom, #000 0%, #000 48%, transparent 100%
+    );
+    mask-image: linear-gradient(
+        to bottom, #000 0%, #000 48%, transparent 100%
+    );
+}
+
+.poster-wall img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    filter: brightness(0.62);
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: -76px 0 0;
+    z-index: -1;
+    background: linear-gradient(
+        to bottom,
+        rgba(20, 20, 20, 0.12),
+        rgba(20, 20, 20, 0.6) 45%,
+        #141414 85%
+    );
+}
+
+.hero-content {
+    max-width: 780px;
+    text-align: center;
+    position: relative;
+}
+
+.play-mark {
+    width: 125px;
+    height: 125px;
+    border: 14px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 24px;
+    font-size: 39px;
+    color: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.hero h1 {
+    font-size: clamp(27px, 4vw, 42px);
+    line-height: 1.25;
+    margin-bottom: 12px;
+    letter-spacing: -1px;
+}
+
+.hero p {
+    max-width: 690px;
+    margin: 0 auto 25px;
+    line-height: 1.8;
+}
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    background: #e50000;
+    color: #ffffff;
+    padding: 12px 19px;
+    border: 1px solid #e50000;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.btn:hover {
+    background: #bd0000;
+    transform: translateY(-2px);
+}
+
+
+
+.section {
+    width: min(1200px, 90%);
+    margin: 0 auto;
+    padding: 48px 0;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+    margin-bottom: 28px;
+}
+
+.section-heading h2 {
+    font-size: clamp(21px, 2.5vw, 28px);
+    line-height: 1.4;
+    margin-bottom: 7px;
+}
+
+.section-heading p {
+    line-height: 1.7;
+}
+
+.arrows {
+    display: flex;
+    gap: 10px;
+    padding: 8px;
+    background: #0c0c0c;
+    border: 1px solid #252525;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.arrows button {
+    width: 38px;
+    height: 38px;
+    color: white;
+    background: #222222;
+    border: 0;
+    border-radius: 5px;
+}
+
+.arrows button:hover {
+    background: #e50000;
+}
+
+
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.category-card {
+    min-width: 0;
+    background: #1c1c1c;
+    border: 1px solid #252525;
+    border-radius: 9px;
+    padding: 14px;
+    transition: border-color 0.25s, transform 0.25s;
+}
+
+.category-card:hover {
+    border-color: #e50000;
+    transform: translateY(-4px);
+}
+
+.category-card img {
+    display: block;
+    width: 100%;
+    height: 155px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 12px;
+}
+
+.category-card span {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.category-card b {
+    font-size: 19px;
+    font-weight: 400;
+}
+
+
+
+.device-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.device-card {
+    padding: 24px;
+    min-height: 150px;
+    background: linear-gradient(135deg, #1d1111, #111111 80%);
+    border: 1px solid #252525;
+    border-radius: 9px;
+    transition: border-color 0.25s;
+}
+
+.device-card:hover {
+    border-color: #555555;
+}
+
+.device-icon {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    background: #242020;
+    color: #e50000;
+    border-radius: 8px;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.device-card h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.device-card p {
+    line-height: 1.7;
+}
+
+
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 35px;
+}
+
+.faq-list details {
+    border-bottom: 1px solid #292929;
+    padding: 20px 0;
+}
+
+.faq-list summary {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    cursor: pointer;
+    list-style: none;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.faq-list summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-list summary::after {
+    content: "+";
+    margin-left: auto;
+    font-size: 23px;
+    font-weight: 300;
+}
+
+.faq-list details[open] summary::after {
+    content: "−";
+}
+
+.faq-list summary span {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+    border-radius: 5px;
+    background: #222222;
+    font-size: 12px;
+}
+
+.faq-list details p {
+    padding: 12px 0 0 51px;
+    line-height: 1.8;
+}
+
+
+.billing {
+    display: flex;
+    gap: 5px;
+    padding: 5px;
+    background: #0c0c0c;
+    border: 1px solid #252525;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.billing button {
+    padding: 10px 15px;
+    border: 0;
+    color: #aaaaaa;
+    background: transparent;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.billing button.selected,
+.billing button:hover {
+    color: #ffffff;
+    background: #252525;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.price-card {
+    padding: 27px;
+    background: #1a1a1a;
+    border: 1px solid #252525;
+    border-radius: 9px;
+}
+
+.price-card h3 {
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.price-card > p {
+    min-height: 60px;
+    line-height: 1.7;
+}
+
+.price {
+    font-size: 32px;
+    font-weight: 600;
+    margin: 18px 0;
+}
+
+.price small {
+    color: #888888;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.price-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.price-actions .btn,
+.price-actions .btn-secondary {
+    flex: 1;
+    text-align: center;
+    padding: 11px 8px;
+    font-size: 11px;
+}
+
+.btn-secondary {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #292929;
+    background: #111111;
+    color: #ffffff;
+    border-radius: 5px;
+    transition: background 0.2s;
+}
+
+.btn-secondary:hover {
+    background: #292929;
+}
+
+
+.trial-banner {
+    width: min(1200px, 90%);
+    min-height: 210px;
+    margin: 45px auto 90px;
+    padding: 35px 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    border: 1px solid #292929;
+    border-radius: 10px;
+    background:
+        linear-gradient(90deg, #101010 15%, rgba(16, 16, 16, 0.75)),
+        url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1400&q=80")
+        center / cover;
+}
+
+.trial-banner h2 {
+    font-size: clamp(23px, 3vw, 34px);
+    margin-bottom: 10px;
+}
+
+.trial-banner p {
+    line-height: 1.8;
+}
+
+
+
+.footer {
+    background: #0d0d0d;
+    padding: 55px max(5%, calc((100% - 1200px) / 2)) 25px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 28px;
+    padding-bottom: 40px;
+}
+
+.footer-grid h4 {
+    font-size: 13px;
+    margin-bottom: 18px;
+}
+
+.footer-grid > div > a {
+    display: block;
+    width: fit-content;
+    color: #999999;
+    font-size: 12px;
+    margin-bottom: 10px;
+    transition: color 0.2s;
+}
+
+.footer-grid > div > a:hover,
+.footer-bottom a:hover {
+    color: #ffffff;
+}
+
+.socials {
+    display: flex;
+    gap: 8px;
+}
+
+.socials a {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    background: #202020;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.socials a:hover {
+    background: #e50000;
+}
+
+.footer-bottom {
+    padding-top: 23px;
+    border-top: 1px solid #292929;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+}
+
+.footer-bottom p,
+.footer-bottom a {
+    font-size: 11px;
+}
+
+.footer-bottom div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-bottom a {
+    color: #999999;
+}
+
+
+@media (max-width: 900px) {
+    .header {
+        gap: 12px;
+    }
+
+    .logo {
+        font-size: 17px;
+    }
+
+    .navbar a {
+        padding: 9px;
+        font-size: 11px;
+    }
+
+    .poster-wall {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .category-card img {
+        height: 170px;
+    }
+
+    .device-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .price-card {
+        padding: 18px;
+    }
+
+    .price-actions {
+        flex-direction: column;
+    }
+}
+
+
+
+@media (max-width: 600px) {
+    .header {
+        width: 92%;
+        min-height: auto;
+        padding: 18px 0;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .logo {
+        font-size: 19px;
+    }
+
+    .header-icons {
+        gap: 12px;
+    }
+
+    .navbar {
+        width: 100%;
+        order: 3;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .navbar a {
+        padding: 9px 10px;
+        font-size: 11px;
+    }
+
+    .hero {
+        min-height: 470px;
+        padding: 0 5% 42px;
+    }
+
+    .poster-wall {
+        top: -130px;
+        height: 380px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-auto-rows: 115px;
+        gap: 5px;
+    }
+
+    .hero::before {
+        inset: -130px 0 0;
+    }
+
+    .play-mark {
+        width: 85px;
+        height: 85px;
+        border-width: 9px;
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .hero h1 {
+        font-size: 27px;
+        letter-spacing: -0.5px;
+    }
+
+    .hero p {
+        font-size: 12px;
+        line-height: 1.8;
+    }
+
+    .section {
+        width: 90%;
+        padding: 34px 0;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .section-heading h2 {
+        font-size: 22px;
+    }
+
+    .section-heading p {
+        font-size: 12px;
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .category-card {
+        padding: 9px;
+    }
+
+    .category-card img {
+        height: 135px;
+    }
+
+    .category-card span {
+        font-size: 12px;
+    }
+
+    .device-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .device-card {
+        min-height: auto;
+        padding: 20px;
+    }
+
+    .faq-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .faq-list summary {
+        font-size: 12px;
+    }
+
+    .faq-list summary span {
+        width: 34px;
+        height: 34px;
+    }
+
+    .faq-list details p {
+        padding-left: 47px;
+    }
+
+    .billing {
+        align-self: flex-start;
+    }
+
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .price-card {
+        padding: 24px;
+    }
+
+    .price-card > p {
+        min-height: 0;
+    }
+
+    .price-actions {
+        flex-direction: row;
+    }
+
+    .trial-banner {
+        width: 90%;
+        margin: 25px auto 55px;
+        padding: 28px 22px;
+        flex-direction: column;
+        align-items: flex-start;
+        background-position: center;
+    }
+
+    .trial-banner h2 {
+        font-size: 25px;
+    }
+
+    .footer {
+        padding: 38px 5% 20px;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 28px 18px;
+    }
+
+    .footer-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .footer-bottom div {
+        gap: 13px;
+    }
+}
+
+
+
+@media (max-width: 360px) {
+    .navbar a {
+        padding: 8px 6px;
+        font-size: 10px;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .category-card img {
+        height: 180px;
+    }
+
+    .price-actions {
+        flex-direction: column;
+    }
+
+    .footer-grid {
+        gap: 25px 12px;
+    }
+}
+
